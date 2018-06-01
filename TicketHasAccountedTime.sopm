@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<otrs_package version="1.0">
+    <!-- GENERATED WITH OTRS::OPM::Maker::Command::sopm (1.4) -->
+    <Name>TicketHasAccountedTime</Name>
+    <Version>5.0.1</Version>
+    <Framework>5.0.x</Framework>
+    <Vendor>Perl-Services.de</Vendor>
+    <URL>http://www.perl-services.de</URL>
+    <Description Lang="de">Besseres Handling für gebuchte Zeiten.</Description>
+    <Description Lang="en">Better handling for accounted times</Description>
+    <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
+    <Filelist>
+        <File Permission="644" Location="Kernel/Config/Files/TicketHasAccountedTime.xml" />
+        <File Permission="644" Location="Kernel/Language/de_TicketHasAccountedTime.pm" />
+        <File Permission="644" Location="Kernel/System/Ticket/Event/SetTicketHasAccountedTimes.pm" />
+        <File Permission="644" Location="doc/TicketHasAccountedTime.json" />
+        <File Permission="644" Location="var/packagesetup/TicketHasAccountedTime.pm" />
+    </Filelist>
+    <CodeInstall Type="post"><![CDATA[
+        $Kernel::OM->Get('var::packagesetup::' . $Param{Structure}->{Name}->{Content} )->CodeInstall();
+    ]]></CodeInstall>
+    <CodeUpgrade Type="post"><![CDATA[
+        $Kernel::OM->Get('var::packagesetup::' . $Param{Structure}->{Name}->{Content} )->CodeUpgrade();
+    ]]></CodeUpgrade>
+</otrs_package>

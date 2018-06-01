@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<otrs_config version="1.0" init="Config">
+    <ConfigItem Name="Ticket::EventModulePost###1038-SetTicketHasAccountedTimes" Required="0" Valid="1">
+        <Description Translatable="1">Set ticket dynamic field to track  accounted times.</Description>
+        <Group>TicketHasAccountedTime</Group>
+        <SubGroup>Events</SubGroup>
+        <Setting>
+            <Hash>
+                <Item Key="Module">Kernel::System::Ticket::Event::SetTicketHasAccountedTimes</Item>
+                <Item Key="Event">TicketAccountTime</Item>
+            </Hash>
+        </Setting>
+    </ConfigItem>
+</otrs_config>
